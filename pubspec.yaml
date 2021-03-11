@@ -1,8 +1,7 @@
 name: faq
 description: A new Flutter package project.
-version: 0.0.1
-author: samninder
-homepage:
+version: 0.0.4
+homepage: https://github.com/samninderSingh/faq
 
 environment:
   sdk: '>=2.7.0 <3.0.0'
