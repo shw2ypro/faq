@@ -6,4 +6,4 @@
 
 ## [0.0.4] - Changes name to faqList
 
-## [0.0.5] - Changes Question format
+## [0.0.5] - Minor: Changes Question format
