@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:list_expandable/list_expandable_widget.dart';
 
 class faqList extends StatefulWidget {
-  final List<List<String>> data;
+  final List<Map<String, String>> data;
   faqList({Key key, this.title, this.data}) : super(key: key);
   final String title;
   @override
@@ -17,11 +17,15 @@ class _faqListState extends State<faqList> {
         children: <Widget>[
           Column(
             children: widget.data.map((group) {
-              int index = widget.data.indexOf(group) + 1;
+              int index = widget.data.indexOf(group);
               return ListExpandableWidget(
                 isExpanded: index == 0,
-                header: _header('Question $index'),
-                items: _buildItems(context, group),
+                header: _header(group['question']),
+                items: [
+                  ListTile(
+                    title: Text(group['answer']),
+                  )
+                ],
               );
             }).toList(),
           )
@@ -35,9 +39,4 @@ class _faqListState extends State<faqList> {
         fontSize: 16,
         fontWeight: FontWeight.bold,
       ));
-  List<ListTile> _buildItems(BuildContext context, List<String> items) => items
-      .map((e) => ListTile(
-            title: Text(e),
-          ))
-      .toList();
 }
