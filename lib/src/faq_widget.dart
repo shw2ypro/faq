@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:list_expandable/list_expandable_widget.dart';
 
 class faqList extends StatefulWidget {
-  final List<Map<String, dynamic>> data;
+  final List<Map<String, String>> data;
   faqList({Key key, this.title, this.data}) : super(key: key);
   final String title;
   @override
